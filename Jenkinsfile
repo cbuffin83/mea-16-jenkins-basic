@@ -8,7 +8,7 @@ pipeline {
 
             steps {
                 sh '''
-                echo "Hi thre"'
+                echo "Hi thre"
                 echo "Groovy Baby"
                 echo "inside shell block"
                 '''
@@ -27,7 +27,12 @@ pipeline {
             }
 
         }
-
     }
-
+    post {
+        always {
+            achiveArtifacts '*.zip'
+        }
+    }
 }
+
+
